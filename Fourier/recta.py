@@ -6,7 +6,7 @@ x = np.linspace(-L, L, 1000)
 
 f = np.where(x < 0, 0, x)
 
-N = 20
+N = 100
 S = np.full_like(x, L/4)  # a0/2
 
 for n in range(1, N+1):
@@ -14,7 +14,7 @@ for n in range(1, N+1):
     bn = (-1)**(n+1) * L / (n * np.pi)
     S += an * np.cos(n * np.pi * x / L) + bn * np.sin(n * np.pi * x / L)
 
-plt.plot(x, f, label='f(x)', linewidth=2)
+plt.plot(x, f, label='f(x)', linewidth=1)
 plt.plot(x, S, label=f'Serie de Fourier N={N}', linestyle='--')
 plt.xlabel('x')
 plt.ylabel('y')
