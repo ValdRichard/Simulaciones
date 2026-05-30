@@ -19,7 +19,7 @@ def rpp(r0, thetap0, theta0):
     return rpp
 
 def thetapp(r, rp, theta, thetap):
-    return g/r * np.sin(theta) - 2 * rp * thetap / r
+    return -g/r * np.sin(theta) - 2 * rp * thetap / r
 
 
 for i in range(pasos):
@@ -31,13 +31,13 @@ for i in range(pasos):
     x0 = r * np.sin(theta)
     y0 = -r * np.cos(theta)
 
-    x = -y0
-    y = x0
+    # x = -y0
+    # y = x0
 
     # x = r * np.sin(theta)
     # y = -r * np.cos(theta)
-    xcal.append(x)
-    ycal.append(y)
+    xcal.append(x0)
+    ycal.append(y0)
     r0 = r
     rp0 = rp
     theta0 = theta
